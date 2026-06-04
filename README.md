@@ -8,12 +8,18 @@ push 到 `main` 自动构建上线(见 `.github/workflows/deploy.yml`)。
 
 ## 一、安装技能(一次性)
 
-把技能放进 Claude Code 的技能目录即可:
+**最简单——直接跟 Claude Code(或 Codex)说一句话:**
+
+> 安装 https://github.com/jianshuo/claude-skills/tree/main/wjs-publishing-hugo
+
+它会把这个技能拉到你的技能目录(Claude Code 在 `~/.claude/skills/`,Codex 在
+`~/.agents/skills/`)。装好后**新开一个会话**,技能就会出现在列表里。
+
+<details>
+<summary>手动安装(可选,不想让 AI 代劳时用)</summary>
 
 ```bash
-# 从技能合集仓库拉取 wjs-publishing-hugo 到 ~/.claude/skills/
-mkdir -p ~/.claude/skills
-cd ~/.claude/skills
+mkdir -p ~/.claude/skills && cd ~/.claude/skills
 git clone --depth 1 --filter=blob:none --sparse \
   https://github.com/jianshuo/claude-skills.git _tmp-skills
 cd _tmp-skills && git sparse-checkout set wjs-publishing-hugo
@@ -21,8 +27,7 @@ mv wjs-publishing-hugo ~/.claude/skills/
 cd .. && rm -rf _tmp-skills
 chmod +x ~/.claude/skills/wjs-publishing-hugo/scripts/*
 ```
-
-装好后,新开一个 Claude Code 会话,技能就会出现在列表里。
+</details>
 
 ## 二、用它改文章
 
