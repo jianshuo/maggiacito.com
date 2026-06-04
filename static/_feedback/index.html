@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>反馈台账</title>
+<style>
+body{font:16px/1.6 system-ui,-apple-system,sans-serif;max-width:1000px;margin:2rem auto;padding:0 1rem}
+table{border-collapse:collapse;width:100%}
+th,td{border:1px solid #ddd;padding:.5rem;text-align:left;vertical-align:top}
+th{background:#f6f6f6}
+</style></head>
+<body>
+<h1>反馈台账</h1>
+<p>每条访客建议从提交到上线的记录。新建议出现在最上面。</p>
+<table><thead><tr>
+<th>#</th><th>建议</th><th>Claude 做了什么</th><th>commit</th><th>状态</th><th>更新时间</th><th>操作</th>
+</tr></thead><tbody>
+<tr>
+      <td>#1</td>
+      <td>把页脚那句西语标语字号调大一点
+
+---
+来自页面: https://maggiacito.com/</td>
+      <td>把页脚字号从继承的 18px 调大到 20px（在 .site-footer 上添加 font-size:20px）</td>
+      <td><a href="https://github.com/jianshuo/maggiacito.com/commit/0eceed8">0eceed8</a></td>
+      <td>已上线</td>
+      <td>2026-06-04T14:39:37Z</td>
+      <td><a href="https://github.com/jianshuo/maggiacito.com/issues/new?labels=revert&title=revert%3A+%231&body=%E5%9B%9E%E6%BB%9A+%231+%E5%BC%95%E5%85%A5%E7%9A%84%E6%94%B9%E5%8A%A8%EF%BC%88commit+0eceed8%EF%BC%89%E3%80%82">回滚</a></td>
+    </tr>
+</tbody></table>
+</body></html>

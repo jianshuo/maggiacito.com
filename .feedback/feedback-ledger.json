@@ -1,3 +1,14 @@
 {
-  "entries": []
+  "entries": [
+    {
+      "issue": 1,
+      "author": "jianshuo",
+      "suggestion": "把页脚那句西语标语字号调大一点\n\n---\n来自页面: https://maggiacito.com/",
+      "summary": "把页脚字号从继承的 18px 调大到 20px（在 .site-footer 上添加 font-size:20px）",
+      "commit": "0eceed8",
+      "status": "deployed",
+      "createdAt": "2026-06-04T14:39:37Z",
+      "updatedAt": "2026-06-04T14:39:37Z"
+    }
+  ]
 }
