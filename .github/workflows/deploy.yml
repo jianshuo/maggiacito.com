@@ -7,6 +7,12 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # The feedback loop pushes to main with GITHUB_TOKEN, which (by GitHub's
+  # recursion-prevention rule) does NOT trigger the push event above. So also
+  # deploy whenever the feedback-loop workflow finishes — that ships its commit.
+  workflow_run:
+    workflows: ["feedback-loop"]
+    types: [completed]
 
 permissions:
   contents: read
