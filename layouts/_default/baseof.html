@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }} · ¡Hola Habana!{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  {{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" href="{{ .RelPermalink }}" title="{{ site.Title }}">{{ end }}
+  {{ partialCached "style.html" "style" }}
+</head>
+<body>
+
+<svg class="frond l" width="260" height="260" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+  <path d="M20 10 C60 30 90 70 100 130 C70 80 40 50 10 40 Z" fill="#127c3a"/>
+  <path d="M20 10 C80 20 130 45 165 95 C110 60 70 40 14 30 Z" fill="#16923f"/>
+  <path d="M20 10 C95 8 150 22 192 55 C130 38 80 28 18 22 Z" fill="#0e6e32"/>
+  <path d="M20 10 C70 0 120 0 175 14 C120 18 70 16 20 18 Z" fill="#1aa347"/>
+</svg>
+<svg class="frond r" width="260" height="260" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+  <path d="M20 10 C60 30 90 70 100 130 C70 80 40 50 10 40 Z" fill="#127c3a"/>
+  <path d="M20 10 C80 20 130 45 165 95 C110 60 70 40 14 30 Z" fill="#16923f"/>
+  <path d="M20 10 C95 8 150 22 192 55 C130 38 80 28 18 22 Z" fill="#0e6e32"/>
+  <path d="M20 10 C70 0 120 0 175 14 C120 18 70 16 20 18 Z" fill="#1aa347"/>
+</svg>
+
+<div class="ticker"><div class="track">
+  <span>¡Bienvenido a Maggiacito<span class="dot"> &#9670; </span>欢迎来到马贾奇托</span>
+  <span>Sol &middot; Salsa &middot; Ron &middot; 文字与生活<span class="dot"> &#9670; </span></span>
+  <span>¡Bienvenido a Maggiacito<span class="dot"> &#9670; </span>欢迎来到马贾奇托</span>
+  <span>Sol &middot; Salsa &middot; Ron &middot; 文字与生活<span class="dot"> &#9670; </span></span>
+</div></div>
+
+<header class="site-header">
+  <a class="site-title" href="/">{{ site.Title }}</a>
+  <nav>
+    {{ range site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
+  </nav>
+</header>
+
+{{ if .IsHome }}
+<section class="hero">
+  <span class="kicker">¡Hola! &middot; 哈瓦那来信</span>
+  <h1 class="wordmark">MAGGIA<span class="accent">CITO</span></h1>
+  <p class="tag">在加勒比的阳光下读字、喝朗姆、想人生。<br><b>Un blog con sabor cubano.</b></p>
+</section>
+{{ end }}
+
+<main>
+  {{ block "main" . }}{{ end }}
+</main>
+
+<footer class="site-footer">
+  <p>&copy; {{ now.Year }} {{ site.Title }} &middot; <a href="/index.xml">RSS</a> &middot; Hecho con sol y ron 🌴</p>
+</footer>
+{{ partial "feedback-widget.html" . }}
+</body>
+</html>

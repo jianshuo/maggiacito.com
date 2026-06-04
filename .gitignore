@@ -1,0 +1,30 @@
+.DS_Store
+._*
+public/
+resources/
+.hugo_build.lock
+wp-json-data/
+
+# WordPress migration inputs (one-time, local only — re-derivable, may hold secrets).
+# The raw export folder contains wordpress_db.sql (a full DB dump) — never commit it.
+# Root-anchored so it does NOT match static/wp-content/uploads/ (the served copy).
+/uploads/
+/wp-content/
+*.WordPress*.xml
+*.sql
+*.zip
+.gstack/
+
+# Non-migration local artifacts in this working dir (not part of the site).
+/Maggie-博客全文存档.pdf
+/articles.json
+/*.typ
+/export_typst.py
+/.wrangler/
+
+# wjs-looping-feedback transient summary
+.feedback/last-summary.txt
+
+# python cache
+__pycache__/
+*.pyc
